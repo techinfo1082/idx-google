@@ -1,3 +1,1 @@
-{
-  devcontainer.enable = true;
-}
+# devcontainer = { enable = true; };
