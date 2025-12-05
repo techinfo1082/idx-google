@@ -1,28 +1,10 @@
 {
-  "name": "idx-kvm-container",
+  "name": "achour-idx-kvm",
   "image": "ubuntu:22.04",
-
   "runArgs": [
     "--device=/dev/kvm",
-    "--cap-add=SYS_ADMIN",
-    "--security-opt=apparmor=unconfined",
-    "--security-opt=seccomp=unconfined",
     "--privileged"
   ],
-
-  "postCreateCommand": "apt update && apt install -y qemu-kvm qemu-utils",
-
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-azuretools.vscode-docker"
-      ]
-    }
-  },
-
-  "forwardPorts": [
-    5900,
-    8006,
-    50922
-  ]
+  "forwardPorts": [5900, 8006],
+  "postCreateCommand": "apt update && apt install -y qemu-kvm"
 }
